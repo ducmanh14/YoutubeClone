@@ -74,4 +74,60 @@
     font-size: 16px;
 
     padding-left: 30px;
+    &:focus{
+        outline: none;
+    }
+    &::placeholder{
+        font-size: 16px;
+    }
+}
+.navbar_searchIconBox{
+    cursor: pointer;
+    width: 70px;
+    border: 1px solid rgb(42, 42, 42);
+    background-color: rgb(42, 42, 42);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+.navbar_mike{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(42, 42, 42);
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+}
+/*-----------------mid navbar------------------------*/
+
+.navbar-right{
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+.navbar-right-logo{
+    width: 30px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+.navbar-modal{
+    position: absolute;
+    top: 35px;
+    width: 100%;
+    z-index: 20;
+    color: white;
+}
+.navbar-modal-option{
+    background-color: rgb(85,85,85);
+    padding: 10px;
+    cursor: pointer;
+    &:hover{
+        background-color: rgb(34,33,33);
+    }
 }
