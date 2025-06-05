@@ -8,16 +8,21 @@ import VideoCallIcon from '@mui/icons-material/VideoCall';
 import NotificationsActiveIcon from '@mui/icons-material/NotificationsActive';
 import PersonIcon from '@mui/icons-material/Person';
 import SideNavbar from '../SideNavbar/sideNavbar';
+import { Link,useNavigate } from 'react-router-dom';
 const Navbar = ({setSideNavbarFunc,sideNavbar}) => {
     const [userPic,setUserpic] = useState("https://th.bing.com/th/id/R.9616f533f2174933ec04cc74164108f9?rik=Ucnk5KRnhC4duw&riu=http%3a%2f%2fwww.bugando.ac.tz%2fschools%2fSchool_Of_Pharmacy%2fimages%2fteams%2favatar.jpg&ehk=Na8vu%2fHzbfviY3bYO%2fRUXOHZ8JqNHAb8OcJ3fiz%2bpME%3d&risl=&pid=ImgRaw&r=0")
     const [navbarModal,setNavbarModal] = useState(false);
-    
+    const navigate = useNavigate ();
+
     const handleClickModal =()=>{
         setNavbarModal(prev=>!prev);
     }
 const SideNavbarFunc=()=>{
     setSideNavbarFunc(!sideNavbar)
-
+}
+const handleprofile = () =>{
+    navigate('/user/7697');
+    setNavbarModal(false);
 }
     return (
         <div className='navbar'>
@@ -26,10 +31,10 @@ const SideNavbarFunc=()=>{
                 <div className="navbarHamberger" onClick={SideNavbarFunc}>
                     <MenuIcon sx={{color:"white"}} />
                 </div>
-                <div className="navbar_youtubeImg">
+                <Link to={'/'} className="navbar_youtubeImg">
                     <YouTubeIcon sx={{ fontSize: "34px"}} className='navbar_youtubeImage' />
                     <div className="navbar_utubeTitle">YouTube</div>
-                </div>
+                </Link>
             </div>
 
             <div className="navbar-middle">
@@ -50,7 +55,7 @@ const SideNavbarFunc=()=>{
 
                 { navbarModal &&
                     <div className="navbar-modal">
-                    <div className="navbar-modal-option">Profile</div>
+                    <div className="navbar-modal-option" onClick={handleprofile} >Profile</div>
                     <div className="navbar-modal-option">Logout</div>
                     <div className="navbar-modal-option">Login</div>
 
